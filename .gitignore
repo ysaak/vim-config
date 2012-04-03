@@ -3,3 +3,4 @@ undo/
 spell/
 tags
 .netrwhist
+*.cache

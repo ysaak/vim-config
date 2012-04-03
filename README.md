@@ -3,9 +3,9 @@ My Vim configuration
 
 Author: Francois Clad <francois.clad@gmail.com>
 
-Fork me on GITHUB at https://github.com/FClad/My-Vim-conf.
+Fork me on GitHub at https://github.com/FClad/My-Vim-conf.
 
-REQUIREMENTS
+Requirements
 ------------
 
 * Vim version 7.3 or above
@@ -13,7 +13,7 @@ REQUIREMENTS
 * [Solarized](http://ethanschoonover.com/solarized) color scheme for your terminal emulator
 
 
-INSTALL
+Install
 -------
 
 1. Clone this repository
@@ -25,7 +25,7 @@ INSTALL
 		bash My-Vim-conf/install.sh
 
 
-PLUGINS
+Plugins
 -------
 
 * [Pathogen](http://www.vim.org/scripts/script.php?script_id=2332): Plugin manager
@@ -33,15 +33,17 @@ PLUGINS
 * [Alternate](http://www.vim.org/scripts/script.php?script_id=31): Quickly switch between source and header files
 * [AutoCompIPop](http://www.vim.org/scripts/script.php?script_id=1879): Automatically opens popup menu for completions 
 * [DoxygenToolkit](http://www.vim.org/scripts/script.php?script_id=987): Simple commands to add Doxygen documentation fields
+* [Fugitive](http://www.vim.org/scripts/script.php?script_id=2975): Git wrapper
 * [Indexer](http://www.vim.org/scripts/script.php?script_id=3221): Auto-generate tags and keep them up-to-date
 * [Lusty-Juggler](http://www.vim.org/scripts/script.php?script_id=2050): Switch quickly among your active buffers 
 * [OmniCppComplete](http://www.vim.org/scripts/script.php?script_id=1520): C/C++ omni-completion with ctags database 
+* [Powerline](http://www.vim.org/scripts/script.php?script_id=3881): Status line utility
 * [Project](http://www.vim.org/scripts/script.php?script_id=69): IDE-like project navigation
 * [Solarized](http://www.vim.org/scripts/script.php?script_id=3520): Beautiful color theme
 * [Tagbar](http://www.vim.org/scripts/script.php?script_id=3465): Display tags of the current file ordered by scope
 
 
-REFERENCES
+References
 ----------
 
 * http://vim.wikia.com/wiki/Use_Vim_like_an_IDE
