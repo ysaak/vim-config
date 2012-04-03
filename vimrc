@@ -68,12 +68,52 @@ set incsearch					" BUT do highlight as you type you search phrase
 set so=10						" Keep 10 lines (top/bottom) for scope
 set novisualbell				" don't blink
 set noerrorbells				" no noise
-set laststatus=2				" always show the status line
 set showcmd						" display incomplete commands
 set modeline					" display the current mode
 set nostartofline				" keep the cursor in the same colon when changing line
-set statusline=\ %F%m%r%h%w\ \ Type:\ %Y\ \ Line:\ %l/%L(%p%%)\ \ Column:\ %c\ 
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+
+
+""""""""""""""""""""
+"   Status line    " 
+""""""""""""""""""""
+" Statusline setup
+set statusline=%#DiffAdd#
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline=%#DiffAdd#
+set statusline+=%f\
+set statusline+=%#LineNr# "switch to colors used for line number
+set statusline+=%{fugitive#statusline()}
+set statusline+=%#DiffAdd# "switch back to normal
+set statusline+=%= "left/right separator
+set statusline+=%m "modified flag
+
+" Display a warning if &paste is set
+set statusline+=%#DiffChange#
+set statusline+=%{&paste?'[paste]':''}
+set statusline+=%#LineNr# "switch to colors used for line number
+set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+set statusline+=%#DiffAdd# "switch to colors used for line number
+set statusline+=%c: "cursor column
+set statusline+=%l/%L "cursor line/total lines
+"set statusline+=\ %P "percent through file
+set laststatus=2
+
+" Return the syntax highlight group under the cursor ''
+function! StatuslineCurrentHighlight()
+    let name = synIDattr(synID(line('.'),col('.'),1),'name')
+    if name == ''
+        return ''
+    else
+        return '[' . name . ']'
+    endif
+endfunction
+
+" Old status line
+"set statusline=\ %F%m%r%h%w\ \ Type:\ %Y\ \ Line:\ %l/%L(%p%%)\ \ Column:\ %c\ 
+
+set laststatus=2				" always show the status line
+
 
 
 """"""""""""""""""""
@@ -283,6 +323,10 @@ let g:tex_flavor='latex'
 let g:LustyJugglerAltTabMode = 1
 
 let g:DoxygenToolkit_authorName="Francois Clad"
+
+let g:Powerline_symbols='fancy'
+let g:Powerline_theme='skwp'
+let g:Powerline_colorscheme='skwp'
 
 "au bufNewFile *.lp 0r ~/.vim/templates/cplex.lp
 
