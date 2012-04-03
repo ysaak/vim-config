@@ -4,20 +4,31 @@ SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ] ; do SOURCE="$(readlink "$SOURCE")"; done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-if [[ "$DIR" != "${HOME}/${DIR##*/}" ]]; then
-	echo "Error: your .vim folder must be in your home directory."
-	exit 1
-fi
-
-if [[ "${DIR##*/}" != ".vim" ]]; then
-	if [[ -e "${HOME}/.vim" ]]; then
-		echo "Error: incorrect folder name and a .vim folder already exists in your home directory."
-		exit 1
+if [ "${DIR}" != "${HOME}/.vim" ]; then
+	if [ -e "${HOME}/.vim" ]; then
+		echo "Warning: a vim folder already exists. Old folder moved to vim_bak."
+		mv ${HOME}/.vim ${HOME}/vim_bak
 	fi
 	echo "Updating folder name."
-	mv ${DIR} ${DIR%/*}/.vim
+	mv ${DIR} ${HOME}/.vim
 fi
 
-echo "Creating symbolic link."
-ln -s ${HOME}/.vim/vimrc ${HOME}/.vimrc
+if [ ! -L "${HOME}/.vimrc" ]; then
+	if [ -e "${HOME}/.vimrc" ] ; then
+		echo "Warning: a vimrc file already exists. Old file moved to vimrc.bak."
+		mv ${HOME}/.vimrc ${HOME}/vimrc.bak 
+	fi
+	echo "Creating symbolic link."
+	ln -s ${HOME}/.vim/vimrc ${HOME}/.vimrc
+fi
+
+if [ ! -d "${HOME}/.vim/temp" ]; then
+	echo "Creating temp folder."
+	mkdir ${HOME}/.vim/temp
+fi
+
+if [ ! -d "${HOME}/.vim/undo" ]; then
+	echo "Creating undo folder."
+	mkdir ${HOME}/.vim/undo
+fi
 
