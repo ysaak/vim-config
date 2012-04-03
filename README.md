@@ -5,6 +5,14 @@ Author: Francois Clad <francois.clad@gmail.com>
 
 Fork me on GITHUB at https://github.com/FClad/My-Vim-conf.
 
+REQUIREMENTS
+------------
+
+* Vim version 7.3 or above
+* [Exuberant Ctags](http://ctags.sourceforge.net/)
+* [Solarized](http://ethanschoonover.com/solarized) color scheme for your terminal emulator
+
+
 INSTALL
 -------
 
@@ -15,6 +23,7 @@ INSTALL
 2. Run the installation script
 
 		bash My-Vim-conf/install.sh
+
 
 PLUGINS
 -------
@@ -31,11 +40,11 @@ PLUGINS
 * [Solarized](http://www.vim.org/scripts/script.php?script_id=3520): Beautiful color theme
 * [Tagbar](http://www.vim.org/scripts/script.php?script_id=3465): Display tags of the current file ordered by scope
 
+
 REFERENCES
 ----------
 
 * http://vim.wikia.com/wiki/Use_Vim_like_an_IDE
 * http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 * http://nodnod.net/2009/feb/09/projects-vim-using-projectsvim/
-* http://ethanschoonover.com/solarized
 
