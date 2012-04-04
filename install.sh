@@ -9,8 +9,8 @@ if [ "${DIR}" != "${HOME}/.vim" ]; then
 		echo "Warning: a vim folder already exists. Old folder moved to vim_bak."
 		mv ${HOME}/.vim ${HOME}/vim_bak
 	fi
-	echo "Updating folder name."
-	mv ${DIR} ${HOME}/.vim
+	echo "Creating symbolic link for .vim folder."
+	ln -s ${DIR} ${HOME}/.vim
 fi
 
 if [ ! -L "${HOME}/.vimrc" ]; then
@@ -18,8 +18,8 @@ if [ ! -L "${HOME}/.vimrc" ]; then
 		echo "Warning: a vimrc file already exists. Old file moved to vimrc.bak."
 		mv ${HOME}/.vimrc ${HOME}/vimrc.bak 
 	fi
-	echo "Creating symbolic link."
-	ln -s ${HOME}/.vim/vimrc ${HOME}/.vimrc
+	echo "Creating symbolic link for .vimrc file."
+	ln -s ${DIR}/vimrc ${HOME}/.vimrc
 fi
 
 if [ ! -d "${HOME}/.vim/temp" ]; then
