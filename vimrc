@@ -17,7 +17,7 @@ filetype indent on				" load filetype indents
 filetype on						" detect the type of file
 set backspace=indent,eol,start	" more powerful backspacing
 set completeopt=longest,menuone	" Completion list ordered by longest match
-"set ofu=syntaxcomplete#Complete	" Turn on omni completion
+set ofu=syntaxcomplete#Complete	" Turn on omni completion
 
 
 """"""""""""""""""""
@@ -191,7 +191,7 @@ vmap		<F2>		<C-c><F2>
 
 " Switch files in an MRU order with F3
 nnoremap	<F3>		:LustyJuggler<CR>
-imap		<F3>		<C-o><F3>
+imap		<F3>		<C-c><F3>
 vmap		<F3>		<C-c><F3>
 
 " Switch to source/header file with F4
@@ -324,9 +324,19 @@ let g:LustyJugglerAltTabMode = 1
 
 let g:DoxygenToolkit_authorName="Francois Clad"
 
+let g:CSApprox_loaded = 1
 let g:Powerline_symbols='fancy'
 let g:Powerline_theme='skwp'
 let g:Powerline_colorscheme='skwp'
+
+"mark syntax errors with :signs
+let g:syntastic_enable_signs=1
+"automatically jump to the error when saving the file
+let g:syntastic_auto_jump=0
+"show the error list automatically
+let g:syntastic_auto_loc_list=1
+"don't care about warnings
+let g:syntastic_quiet_warnings=0
 
 "au bufNewFile *.lp 0r ~/.vim/templates/cplex.lp
 
