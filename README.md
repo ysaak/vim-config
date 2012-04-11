@@ -11,6 +11,9 @@ Requirements
 * Vim version 7.3 or above
 * [Exuberant Ctags](http://ctags.sourceforge.net/)
 * [Solarized](http://ethanschoonover.com/solarized) color scheme for your terminal emulator
+* [Patched
+  fonts](https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts) for
+  the powerline plugin
 
 
 Install
