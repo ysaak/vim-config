@@ -48,7 +48,7 @@ endtry
 """"""""""""""""""""
 
 set ruler						" show the cursor position all the time
-set cmdheight=2					" the command bar is 2 high
+set cmdheight=1					" the command bar is 2 high
 set hid							" you can change buffer without saving
 set backspace=2					" make backspace work normal
 set report=0					" tell us when anything is changed via :...
@@ -127,7 +127,7 @@ set wildmenu					" menu completion
 " Text Formatting  " 
 """"""""""""""""""""
 
-set textwidth=75				" Set line width
+set textwidth=100				" Set line width
 set fo=tcrqn					" See Help (complex)
 set ai							" autoindent
 set si							" smartindent
@@ -313,6 +313,28 @@ autocmd FileType tex	source ~/.vim/tex.vim
 autocmd FileType c		set syntax=c.doxygen
 autocmd FileType cpp	set syntax=cpp.doxygen
 
+
+"""""""""""""""
+"  Folding   "
+""""""""""""""
+
+" Saving folds
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
+" default fold level, all open, set it 200 or something
+" to make it all closed.
+set foldlevel=0
+
+" Fold only the first level
+set foldnestmax=1
+
+autocmd FileType python		set foldmethod=indent
+autocmd FileType c			set foldmethod=syntax
+autocmd FileType cpp		set foldmethod=syntax
+autocmd FileType php		set foldmethod=syntax
+autocmd FileType java		set foldmethod=syntax
+
 """"""""""""""""""""
 "  Miscellaneous   "
 """"""""""""""""""""
@@ -322,7 +344,7 @@ let g:tex_flavor='latex'
 
 let g:LustyJugglerAltTabMode = 1
 
-let g:DoxygenToolkit_authorName="Francois Clad"
+let g:DoxygenToolkit_authorName="Damien ROTH"
 
 let g:CSApprox_loaded = 1
 let g:Powerline_symbols='fancy'
@@ -339,4 +361,3 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_warnings=0
 
 "au bufNewFile *.lp 0r ~/.vim/templates/cplex.lp
-
