@@ -114,8 +114,6 @@ endfunction
 
 set laststatus=2				" always show the status line
 
-
-
 """"""""""""""""""""
 "       Menu       " 
 """"""""""""""""""""
@@ -128,6 +126,7 @@ set wildmenu					" menu completion
 """"""""""""""""""""
 
 set textwidth=100				" Set line width
+set colorcolumn=100
 set fo=tcrqn					" See Help (complex)
 set ai							" autoindent
 set si							" smartindent
@@ -135,8 +134,8 @@ set cindent						" do c-style identing
 set tabstop=4					" tab spacing
 set softtabstop=4				" 2 spaces when pressing <tab> unify
 set shiftwidth=4				" unify
-set noexpandtab					" real tabs please!
-set smarttab					" use tabs at the start of a line, spaces elsewhere
+set expandtab					" spaces for tabs please!
+"set smarttab					" use tabs at the start of a line, spaces elsewhere
 
 
 """"""""""""""""""""
@@ -318,9 +317,18 @@ autocmd FileType cpp	set syntax=cpp.doxygen
 "  Folding   "
 """"""""""""""
 
-" Saving folds
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+" Saving folds (Error free, see: http://ebonhand.wordpress.com/2011/03/30/automatically-save-and-load-vim-views-folds/)
+set viewoptions-=options
+augroup vimrc
+    autocmd BufWritePost *
+    \   if expand('%') != '' && &buftype !~ 'nofile'
+    \|      mkview
+    \|  endif
+    autocmd BufRead *
+    \   if expand('%') != '' && &buftype !~ 'nofile'
+    \|      silent loadview
+    \|  endif
+augroup END
 
 " default fold level, all open, set it 200 or something
 " to make it all closed.
