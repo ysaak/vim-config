@@ -5,3 +5,4 @@ view/
 tags
 .netrwhist
 *.cache
+.DS_Store

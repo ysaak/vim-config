@@ -1,31 +1,26 @@
 My Vim configuration
 ====================
 
-Author: Francois Clad <francois.clad@gmail.com>
-
-Fork me on GitHub at https://github.com/FClad/My-Vim-conf.
-
 Requirements
 ------------
 
 * Vim version 7.3 or above
 * [Exuberant Ctags](http://ctags.sourceforge.net/)
 * [Solarized](http://ethanschoonover.com/solarized) color scheme for your terminal emulator
-* [Patched
-  fonts](https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts) for
-  the powerline plugin
-
+* [Patched fonts](https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts) for
+  the powerline plugin (UPDATE: patched Monaco font is now available in the
+  fonts directory)
 
 Install
 -------
 
 1. Clone this repository
 
-		git clone git://github.com/FClad/My-Vim-conf.git
+        git clone git://github.com/FClad/My-Vim-conf.git
 
 2. Run the installation script
 
-		bash My-Vim-conf/install.sh
+        bash My-Vim-conf/install.sh
 
 
 Plugins
