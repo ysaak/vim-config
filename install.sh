@@ -32,3 +32,6 @@ if [ ! -d "${HOME}/.vim/undo" ]; then
 	mkdir ${HOME}/.vim/undo
 fi
 
+# Updating submodules
+git submodule init
+git submodule update
