@@ -35,3 +35,6 @@ fi
 # Updating submodules
 git submodule init
 git submodule update
+
+## fix little problem with projexplorer bundle
+echo -e "doc/tags\n.gitignore" > bundle/projexplorer.gitignore
